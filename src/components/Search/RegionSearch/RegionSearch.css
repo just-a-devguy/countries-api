@@ -1,0 +1,47 @@
+.region-search {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  position: relative;
+}
+
+.search-title {
+  /* border: 1px solid #000; */
+  margin-bottom: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.13);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.region-options {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.13);
+  text-align: left;
+  padding: 1rem;
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  margin-top: 0.5rem;
+  z-index: 2;
+  background-color: #fff;
+  display: none;
+}
+
+.choice {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}

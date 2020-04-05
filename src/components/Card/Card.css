@@ -1,0 +1,27 @@
+.card {
+  margin: 3rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 1px 6px 15px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+img {
+  display: inline-block;
+  width: 100%;
+}
+
+.card__body {
+  padding: 2rem 1rem;
+}
+
+.card__body-title {
+  margin-bottom: 1rem;
+}
+
+.card__body-info {
+  font-weight: 600;
+}
+
+.card__body-info span {
+  font-weight: 300;
+}

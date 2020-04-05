@@ -1,0 +1,11 @@
+.option label {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  margin: 0.2rem 0;
+}
+
+.option:hover,
+.option:active {
+  background-color: #fafafa;
+}

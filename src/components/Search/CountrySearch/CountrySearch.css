@@ -1,0 +1,20 @@
+.country-search {
+  width: 40%;
+  position: relative;
+}
+
+.country-search input {
+  width: 100%;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.13);
+  padding: 1rem 3rem;
+}
+
+.country-search .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+}
