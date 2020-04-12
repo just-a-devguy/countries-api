@@ -29,13 +29,13 @@ class CardsDetails extends React.Component {
       subregion,
       capital,
       topLevelDomain,
-      currencies,
-      languages,
-      borders,
+      // currencies,
+      // languages,
+      // borders,
       flag,
     } = this.state.countries;
 
-    console.log(name);
+    // work on being able to display currencies
 
     return (
       <div>
