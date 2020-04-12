@@ -18,10 +18,21 @@
   cursor: pointer;
 }
 
+.search-title:focus + .region-options {
+  opacity: 1;
+  /* height: 0px; */
+  transition: all 0.5ms;
+}
+
+.search-title:focus .title-icon {
+  transform: rotate(0deg);
+}
+
 .title-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: rotate(180deg);
 }
 
 .region-options {
@@ -37,7 +48,8 @@
   margin-top: 0.5rem;
   z-index: 2;
   background-color: #fff;
-  display: none;
+  /* display: none; */
+  opacity: 0;
 }
 
 .choice {

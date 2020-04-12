@@ -6,7 +6,7 @@ import "./RegionSearch.css";
 const RegionSearch = ({ regionChange, resetRegion }) => {
   return (
     <div className="region-search">
-      <div className="search-title">
+      <div className="search-title" tabIndex="1">
         <p>Filter by Region</p>
         <div className="title-icon">
           <ion-icon name="chevron-down-outline"></ion-icon>
