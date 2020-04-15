@@ -3,10 +3,50 @@
   margin: auto;
 }
 
+#Back-Section {
+  margin: 3rem 0;
+}
+
+.Back {
+  text-decoration: none;
+  display: inline-flex;
+  padding: 0.5rem 0.9rem;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #000;
+  box-shadow: 1px 6px 15px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  width: 8%;
+}
+
+.Details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
 .Details-Info {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.Borders {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.Border {
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  /* box-shadow: 1px 6px 15px 0px rgba(0, 0, 0, 0.15); */
+  margin: 0 0.5rem;
+  padding: 0.1rem 0.8rem;
+}
+
+h2 {
+  display: block;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 p {

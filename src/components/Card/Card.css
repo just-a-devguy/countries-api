@@ -1,8 +1,14 @@
-.card {
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.Card {
   margin: 3rem 0;
   border-radius: 0.5rem;
   box-shadow: 1px 6px 15px 0px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  min-height: 400px;
 }
 
 img {
@@ -10,18 +16,18 @@ img {
   width: 100%;
 }
 
-.card__body {
+.Card__Body {
   padding: 2rem 1rem;
 }
 
-.card__body-title {
+.Card__Body-Title {
   margin-bottom: 1rem;
 }
 
-.card__body-info {
+.Card__Body-Info {
   font-weight: 600;
 }
 
-.card__body-info span {
+.Card__Body-Info span {
   font-weight: 300;
 }

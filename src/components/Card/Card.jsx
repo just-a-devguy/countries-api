@@ -5,23 +5,31 @@ import "./Card.css";
 // onClick={() => history.push(`/card-detail/${country.numericCode}`)} add to card div
 
 const Card = ({ country, history }) => (
-  <Link to={`/card-detail/${country.alpha2Code}`}>
-    <div className="card">
+  // const separator = () => {}
+
+  <Link to={`/card-detail/${country.alpha3Code}`}>
+    <div className="Card">
       <img src={country.flag} alt={country.name + " Flag"} />
-      <div className="card__body">
-        <h1 className="card__body-title"> {country.name} </h1>
-        <p className="card__body-info">
-          Population:<span> {country.population} </span>
+      <div className="Card__Body">
+        <h1 className="Card__Body-Title"> {country.name} </h1>
+        <p className="Card__Body-Info">
+          Population:<span> {separator(country.population)} </span>
         </p>
-        <p className="card__body-info">
+        <p className="Card__Body-Info">
           Region:<span> {country.region} </span>
         </p>
-        <p className="card__body-info">
+        <p className="Card__Body-Info">
           Capital:<span> {country.capital} </span>
         </p>
       </div>
     </div>
   </Link>
 );
+
+function separator(num) {
+  let num_parts = num.toString().split(".");
+  num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return num_parts.join(".");
+}
 
 export default withRouter(Card);

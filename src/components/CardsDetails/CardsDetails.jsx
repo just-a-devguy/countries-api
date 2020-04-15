@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 import "./CardsDetails.css";
 
@@ -11,6 +11,8 @@ class CardsDetails extends React.Component {
     this.state = {
       countries: [],
     };
+
+    // this.separator = this.separator.bind(this);
   }
 
   componentDidMount() {
@@ -20,6 +22,16 @@ class CardsDetails extends React.Component {
       .then((res) => res.json())
       .then((country) => this.setState({ countries: country }));
   }
+
+  // separator(population) {
+  //   let population_parts = population.toString().split(".");
+  //   population_parts[0] = population_parts[0].replace(
+  //     /\B(?=(\d{3})+(?!\d))/g,
+  //     ","
+  //   );
+  //   console.log(population_parts.join("."));
+  // }
+
   render() {
     const {
       name,
@@ -31,7 +43,7 @@ class CardsDetails extends React.Component {
       topLevelDomain,
       currencies,
       languages,
-      // borders,
+      borders,
       flag,
     } = this.state.countries;
 
@@ -45,50 +57,72 @@ class CardsDetails extends React.Component {
 
     return (
       <div className="Cards-Details">
-        <Link to="/">Back to Home</Link>
-        <h1>This is Cards Details {this.props.match.params.cardId}</h1>
+        <div id="Back-Section">
+          <Link to="/" className="Back">
+            <ion-icon name="arrow-back-outline" id="Back-Icon"></ion-icon>
+            Back
+          </Link>
+        </div>
 
-        <div className="Details-Info">
-          <div className="Detail-Flag">
+        <div className="Details">
+          <div className="Details-Flag">
             <img src={flag} alt={name + "flag"} />
           </div>
-          <div>
+
+          <div className="Details-Info">
             <h2> {name} </h2>
-            <p>
-              Native Name: <span> {nativeName} </span>
-            </p>
-            <p>
-              Population: <span> {population} </span>
-            </p>
-            <p>
-              Region: <span> {region} </span>
-            </p>
-            <p>
-              Sub Region: <span> {subregion} </span>
-            </p>
-            <p>
-              Capital: <span> {capital} </span>
-            </p>
+            <div className="Name-Details">
+              <p>
+                Native Name: <span> {nativeName} </span>
+              </p>
+              <p>
+                Population: <span> {population} </span>
+              </p>
+              <p>
+                Region: <span> {region} </span>
+              </p>
+              <p>
+                Sub Region: <span> {subregion} </span>
+              </p>
+              <p>
+                Capital: <span> {capital} </span>
+              </p>
+            </div>
+
+            <div className="Other-Details">
+              <p>
+                Top Level Domain: <span>{topLevelDomain}</span>
+              </p>
+              <p>
+                Currency: <span>{currencies ? currencies[0].code : null}</span>
+              </p>
+              <p>
+                Languages:
+                <span>
+                  {languages ? languages.map((lan) => `${lan.name},`) : null}
+                </span>
+              </p>
+            </div>
+
+            <div className="Borders">
+              Borders:
+              {borders
+                ? borders.map((border) => (
+                    <Link
+                      key={border}
+                      to={`/card-detail/${border}`}
+                      className="Border"
+                    >
+                      {border}
+                    </Link>
+                  ))
+                : null}
+            </div>
           </div>
-          <div>
-            <p>
-              Top Level Domain: <span>{topLevelDomain}</span>
-            </p>
-            <p>
-              Currency: <span>{currencies ? currencies[0].code : null}</span>
-            </p>
-            <p>
-              Languages:
-              <span>
-                {languages ? languages.map((lan) => `${lan.name},`) : null}
-              </span>
-            </p>
-          </div>
-          <div>Info Sec</div>
         </div>
       </div>
     );
   }
 }
 
-export default CardsDetails;
+export default withRouter(CardsDetails);
