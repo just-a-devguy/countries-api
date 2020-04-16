@@ -15,22 +15,17 @@ class CardsDetails extends React.Component {
     // this.separator = this.separator.bind(this);
   }
 
-  componentDidMount() {
-    fetch(
-      `https://restcountries.eu/rest/v2/alpha/${this.props.match.params.cardId}`
-    )
+  history = this.props;
+
+  fetchCountry = (countryCode) => {
+    fetch(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
       .then((res) => res.json())
       .then((country) => this.setState({ countries: country }));
-  }
+  };
 
-  // separator(population) {
-  //   let population_parts = population.toString().split(".");
-  //   population_parts[0] = population_parts[0].replace(
-  //     /\B(?=(\d{3})+(?!\d))/g,
-  //     ","
-  //   );
-  //   console.log(population_parts.join("."));
-  // }
+  componentDidMount() {
+    this.fetchCountry(this.props.match.params.cardId);
+  }
 
   render() {
     const {
@@ -46,14 +41,6 @@ class CardsDetails extends React.Component {
       borders,
       flag,
     } = this.state.countries;
-
-    // work on being able to display currencies
-
-    // const currencies = this.state.countries.currencies;
-
-    // if (this.state.countries.currencies) {
-    //   console.log(currencies[0].code);
-    // }
 
     return (
       <div className="Cards-Details">
@@ -76,7 +63,8 @@ class CardsDetails extends React.Component {
                 Native Name: <span> {nativeName} </span>
               </p>
               <p>
-                Population: <span> {population} </span>
+                Population:
+                <span> {population && population.toLocaleString()} </span>
               </p>
               <p>
                 Region: <span> {region} </span>
@@ -106,15 +94,38 @@ class CardsDetails extends React.Component {
 
             <div className="Borders">
               Borders:
+              {/*
+              {borders && borders !== 0 ? (
+                borders.map((border) => (
+                  <button
+                    key={border}
+                    className="Border"
+                    onClick={() => {
+                      this.fetchCountry(border);
+                      this.props.history.push(`/card-detail/${border}`);
+                    }}
+                  >
+                    {border}
+                  </button>
+                ))
+              ) : (
+                <button>None</button>
+              )}
+              
+                if there are borders, map over and display a button, if not return a paragraph with the word none
+                */}
               {borders
                 ? borders.map((border) => (
-                    <Link
+                    <button
                       key={border}
-                      to={`/card-detail/${border}`}
                       className="Border"
+                      onClick={() => {
+                        this.fetchCountry(border);
+                        this.props.history.push(`/card-detail/${border}`);
+                      }}
                     >
                       {border}
-                    </Link>
+                    </button>
                   ))
                 : null}
             </div>
