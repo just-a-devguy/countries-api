@@ -3,13 +3,12 @@ import "./CountrySearch.css";
 
 const CountrySearch = ({ changeFormEvent }) => {
   return (
-    <div className="country-search">
-      <div className="search-icon">
+    <div className="Country-Search">
+      <div className="Search-Icon">
         <ion-icon name="search-outline"></ion-icon>
       </div>
       <input
         type="search"
-        // placeholder={placeholder}
         placeholder="Search for a country"
         onChange={changeFormEvent}
       />

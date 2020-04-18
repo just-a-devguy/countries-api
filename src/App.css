@@ -1,1 +1,39 @@
+.App.Dark-Mode {
+  background-color: #202c37;
+}
 
+.App.Dark-Mode .Header {
+  background-color: #202c37;
+  color: #ffffff;
+}
+
+.App.Dark-Mode .Header button {
+  color: #fff;
+}
+
+.App.Dark-Mode .Cards-Wrapper {
+  background-color: #202c37;
+}
+
+.App.Dark-Mode .Country-Search input {
+  background-color: #2b3945;
+  color: #fff;
+}
+
+.App.Dark-Mode .Country-Search .Search-Icon {
+  color: #fff;
+}
+
+.App.Dark-Mode .Card {
+  background-color: #2b3945;
+  color: #fff;
+}
+
+/*
+- Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+*/

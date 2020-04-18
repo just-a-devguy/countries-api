@@ -5,7 +5,7 @@ import "./Cards.css";
 
 const Cards = (props) => {
   return (
-    <div className="cards">
+    <div className="Cards">
       {props.countries
         .filter((item, inx) => inx < 4)
         .map((country) => (

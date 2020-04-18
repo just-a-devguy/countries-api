@@ -1,13 +1,14 @@
 import React from "react";
 import CountrySearch from "./CountrySearch/CountrySearch";
-import RegionSearch from "./RegionSearch/RegionSearch";
+import Regions from "./Regions/Regions";
 import "./Search.css";
 
 const Search = ({ changeFormEvent, regionChange, resetRegion }) => {
   return (
-    <div className="search">
+    <div className="Search">
       <CountrySearch changeFormEvent={changeFormEvent} />
-      <RegionSearch resetRegion={resetRegion} regionChange={regionChange} />
+
+      <Regions regionChange={regionChange} />
     </div>
   );
 };

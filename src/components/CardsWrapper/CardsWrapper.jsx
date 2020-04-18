@@ -1,48 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Cards from "../Cards/Cards";
 import "./CardsWrapper.css";
 import Search from "../Search/Search";
 
-class CardsWrapper extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      countries: [],
-      countrySearch: "",
-      regionSearch: "",
-    };
-  }
-
-  componentDidMount() {
+const CardsWrapper = () => {
+  const fetchCountries = () => {
     fetch("https://restcountries.eu/rest/v2/all")
       .then((res) => res.json())
-      .then((country) => this.setState({ countries: country }));
-  }
+      .then((country) => setCountries(country));
+  };
 
-  render() {
-    const { countries, countrySearch, regionSearch } = this.state;
+  const [countries, setCountries] = useState([]),
+    [countrySearch, setCountrySearch] = useState(""),
+    [regionSearch, setRegionSearch] = useState("");
 
-    const filteredCountries = countries.filter(
-      (country) =>
-        country.name.toLowerCase().includes(countrySearch.toLowerCase()) &&
-        country.region.toLowerCase().includes(regionSearch.toLowerCase())
-    );
+  useEffect(() => {
+    fetchCountries();
+  });
 
-    return (
-      <div className="cards-wrapper ">
-        <Search
-          changeFormEvent={(e) =>
-            this.setState({ countrySearch: e.target.value })
-          }
-          regionChange={(e) => this.setState({ regionSearch: e.target.value })}
-          resetRegion={() => this.setState({ regionSearch: "" })}
-        />
-        <Cards countries={filteredCountries} />
-      </div>
-    );
-  }
-}
+  const filteredCountries = countries.filter(
+    (country) =>
+      country.name.toLowerCase().includes(countrySearch.toLowerCase()) &&
+      country.region.toLowerCase().includes(regionSearch.toLowerCase())
+  );
+
+  return (
+    <div className="Cards-Wrapper">
+      <Search
+        changeFormEvent={(e) => setCountrySearch(e.target.value)}
+        regionChange={(e) =>
+          e ? setRegionSearch(e.label) : setRegionSearch("")
+        }
+        resetRegion={() => setRegionSearch("")}
+      />
+
+      <Cards countries={filteredCountries} />
+    </div>
+  );
+};
 
 export default CardsWrapper;

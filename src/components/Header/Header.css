@@ -1,4 +1,4 @@
-.header {
+.Header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,4 +15,26 @@ button {
   align-items: center;
   justify-content: space-evenly;
   width: 8%;
+}
+
+/* Medium Devices*/
+@media only screen and (max-width: 1100px) {
+  button {
+    min-width: 89px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Header h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .Header {
+    padding: 0.7rem 1rem;
+  }
+  .Header h1 {
+    font-size: 1rem;
+  }
 }

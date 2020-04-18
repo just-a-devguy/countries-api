@@ -2,8 +2,6 @@ import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import "./Card.css";
 
-// onClick={() => history.push(`/card-detail/${country.numericCode}`)} add to card div
-
 const Card = ({ country, history }) => (
   <Link to={`/card-detail/${country.alpha3Code}`}>
     <div className="Card">
