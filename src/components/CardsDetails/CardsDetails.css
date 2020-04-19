@@ -17,6 +17,7 @@
   box-shadow: 1px 6px 15px 0px rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
   width: 8%;
+  min-width: 97px;
 }
 
 .Details {
@@ -59,4 +60,26 @@ p {
 
 span {
   font-weight: 300;
+}
+
+@media only screen and (max-width: 1100px) {
+  .Details-Info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Details-Info * {
+    margin-bottom: 0.4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Details div {
+    margin-bottom: 1rem;
+  }
 }

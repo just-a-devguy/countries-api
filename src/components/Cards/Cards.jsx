@@ -6,11 +6,9 @@ import "./Cards.css";
 const Cards = (props) => {
   return (
     <div className="Cards">
-      {props.countries
-        .filter((item, inx) => inx < 4)
-        .map((country) => (
-          <Card key={country.numericCode} country={country} />
-        ))}
+      {props.countries.map((country) => (
+        <Card key={country.numericCode} country={country} />
+      ))}
     </div>
   );
 };

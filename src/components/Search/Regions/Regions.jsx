@@ -20,6 +20,7 @@ const Regions = ({ regionChange }) => {
         isSearchable={false}
         onChange={regionChange}
         openMenuOnFocus={true}
+        classNamePrefix="Select-Dark"
       />
     </div>
   );
