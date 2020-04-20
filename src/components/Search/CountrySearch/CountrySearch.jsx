@@ -8,6 +8,7 @@ const CountrySearch = ({ changeFormEvent }) => {
         <ion-icon name="search-outline"></ion-icon>
       </div>
       <input
+        aria-label="search"
         type="search"
         placeholder="Search for a country"
         onChange={changeFormEvent}
