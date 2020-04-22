@@ -17,7 +17,7 @@ const CardsWrapper = () => {
 
   useEffect(() => {
     fetchCountries();
-  });
+  },[]);
 
   const filteredCountries = countries.filter(
     (country) =>
