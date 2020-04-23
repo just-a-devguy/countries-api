@@ -44,7 +44,7 @@
 
 .App.Dark-Mode .Border {
   color: #fff;
-  border: #fff;
+  border-color: #fff;
 }
 
 .App.Dark-Mode div[class^="Select-Dark"] {
