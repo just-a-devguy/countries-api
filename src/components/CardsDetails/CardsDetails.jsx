@@ -15,7 +15,7 @@ const CardsDetails = ({ match, history }) => {
 
   useEffect(() => {
     fetchCountry(match.params.cardId);
-  }, []);
+  }, [match.params.cardId]);
 
   const {
     name,
