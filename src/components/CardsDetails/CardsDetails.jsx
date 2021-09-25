@@ -7,10 +7,10 @@ import "./CardsDetails.css";
 const CardsDetails = ({ match, history }) => {
   const [countries, setCountries] = useState([]);
 
-  const fetchCountry = (countryCode) => {
-    fetch(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
-      .then((res) => res.json())
-      .then((country) => setCountries(country));
+  const fetchCountry = countryCode => {
+    fetch(`https://restcountries.com/v2/alpha/${countryCode}`)
+      .then(res => res.json())
+      .then(country => setCountries(country));
   };
 
   useEffect(() => {
@@ -28,14 +28,15 @@ const CardsDetails = ({ match, history }) => {
     currencies,
     languages,
     borders,
-    flag,
+    flags,
   } = countries;
+
+  // const flag = flags[1];
 
   return (
     <div className="Cards-Details">
       <div id="Back-Section">
         <Link to="/" className="Back">
-          {" "}
           <ion-icon name="arrow-back-outline" id="Back-Icon"></ion-icon>
           Back
         </Link>
@@ -43,7 +44,7 @@ const CardsDetails = ({ match, history }) => {
 
       <div className="Details">
         <div className="Details-Flag">
-          <img src={flag} alt={name + "flag"} />
+          <img src={flags && flags[1]} alt={name + "flag"} />
         </div>
 
         <div className="Details-Info">
@@ -77,7 +78,7 @@ const CardsDetails = ({ match, history }) => {
             <p>
               Languages:
               <span>
-                {languages ? languages.map((lan) => `${lan.name},`) : null}
+                {languages ? languages.map(lan => `${lan.name},`) : null}
               </span>
             </p>
           </div>
@@ -85,7 +86,7 @@ const CardsDetails = ({ match, history }) => {
           <div className="Borders">
             Borders:
             {borders
-              ? borders.map((border) => (
+              ? borders.map(border => (
                   <button
                     key={border}
                     className="Border"

@@ -6,9 +6,9 @@ import Search from "../Search/Search";
 
 const CardsWrapper = () => {
   const fetchCountries = () => {
-    fetch("https://restcountries.eu/rest/v2/all")
-      .then((res) => res.json())
-      .then((country) => setCountries(country));
+    fetch("https://restcountries.com/v2/all")
+      .then(res => res.json())
+      .then(country => setCountries(country));
   };
 
   const [countries, setCountries] = useState([]),
@@ -20,7 +20,7 @@ const CardsWrapper = () => {
   }, []);
 
   const filteredCountries = countries.filter(
-    (country) =>
+    country =>
       country.name.toLowerCase().includes(countrySearch.toLowerCase()) &&
       country.region.toLowerCase().includes(regionSearch.toLowerCase())
   );
@@ -28,10 +28,8 @@ const CardsWrapper = () => {
   return (
     <div className="Cards-Wrapper">
       <Search
-        changeFormEvent={(e) => setCountrySearch(e.target.value)}
-        regionChange={(e) =>
-          e ? setRegionSearch(e.label) : setRegionSearch("")
-        }
+        changeFormEvent={e => setCountrySearch(e.target.value)}
+        regionChange={e => (e ? setRegionSearch(e.label) : setRegionSearch(""))}
         resetRegion={() => setRegionSearch("")}
       />
 
