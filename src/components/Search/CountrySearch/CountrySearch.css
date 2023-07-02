@@ -1,0 +1,27 @@
+.Country-Search {
+  width: 40%;
+  position: relative;
+  min-width: 286px;
+}
+
+.Country-Search input {
+  width: 100%;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.13);
+  padding: 0.7rem 2.5rem;
+}
+
+.Country-Search .Search-Icon {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 768px) {
+  .Country-Search {
+    margin-bottom: 1.5rem;
+  }
+}

@@ -1,0 +1,57 @@
+.App {
+  min-height: 100vh;
+}
+
+.App.Dark-Mode {
+  background-color: #202c37;
+}
+
+.App.Dark-Mode .Header {
+  background-color: #202c37;
+  color: #ffffff;
+}
+
+.App.Dark-Mode .Header button {
+  color: #fff;
+}
+
+.App.Dark-Mode .Cards-Wrapper {
+  background-color: #202c37;
+}
+
+.App.Dark-Mode .Country-Search input {
+  background-color: #2b3945;
+  color: #fff;
+}
+
+.App.Dark-Mode .Country-Search .Search-Icon {
+  color: #fff;
+}
+
+.App.Dark-Mode .Card {
+  background-color: #2b3945;
+  color: #fff;
+}
+
+.App.Dark-Mode .Back {
+  color: #fff;
+  box-shadow: 0px 0px 5px 3px #2b3945;
+}
+
+.App.Dark-Mode .Details-Info {
+  color: #fff;
+}
+
+.App.Dark-Mode .Border {
+  color: #fff;
+  border-color: #fff;
+}
+
+.App.Dark-Mode div[class^="Select-Dark"] {
+  background-color: #2b3945;
+  color: #fff;
+}
+
+.App.Dark-Mode .Select-Dark__option:hover {
+  background-color: #202c37;
+}

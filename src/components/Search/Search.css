@@ -1,0 +1,23 @@
+.Search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* Tablets */
+@media only screen and (max-width: 768px) {
+  .Search {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+  }
+}
+
+/* Smart Phones */
+@media only screen and (max-width: 550px) {
+  .Cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
