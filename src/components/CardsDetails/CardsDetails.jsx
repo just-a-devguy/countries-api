@@ -28,7 +28,7 @@ const CardsDetails = ({ match, history }) => {
     currencies,
     languages,
     borders,
-    flags,
+    flag,
   } = countries;
 
   // const flag = flags[1];
@@ -44,7 +44,7 @@ const CardsDetails = ({ match, history }) => {
 
       <div className="Details">
         <div className="Details-Flag">
-          <img src={flags && flags[1]} alt={name + "flag"} />
+          <img src={flag} alt={name + "flag"} />
         </div>
 
         <div className="Details-Info">
